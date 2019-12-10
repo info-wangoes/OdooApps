@@ -13,7 +13,7 @@ Disallow negative quantity when creating sale, purchse and inventory.
     'author': "Wangoes Technology",
     'website': "http://www.wangoes.com",
     'category': 'Sale Purchse Inventory',
-    'version': '12.0.1.0',
+    'version': '11.0.1.0',
     'images': ['static/description/banner.png'],
     'license': 'LGPL-3',
 
