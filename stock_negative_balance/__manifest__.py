@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Stock Negative Quantity",
+    'name': "Stop Negative Stock Quantity",
     'summary': """ Disallow negative stock """,
     'description': """ 
 
