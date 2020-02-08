@@ -96,7 +96,6 @@ class RestAuth2Access(http.Controller):
        
     @http.route('/oauth2/access_token', type='http', auth='public',csrf=False)
     def access_token(self,context=None, **kw):
-        import pdb; pdb.set_trace()
         """This method is used for generate access token for auth2"""
         user = self.get_user(kw)
         error = {}
@@ -142,8 +141,7 @@ class RestAuth2Access(http.Controller):
 class RestController(http.Controller):
 
     @http.route('/api/employee', auth="none", type='http', methods=['GET'], csrf=False)
-    def api_get_employee(self, model='hr.employee', values=None, context=None, token=None, **kw):
-        import pdb; pdb.set_trace()
+    def api_get_employee(self, model='res.users', values=None, context=None, token=None, **kw):
         """
         API to Get Employee
         """
@@ -156,11 +154,8 @@ class RestController(http.Controller):
 
             for partner in partners:
                 partner_vals = {
-                    'id':partner.id,
-                    'address_id':partner.address_id.name,
                     'name':partner.name,
-                    'email':partner.work_email,
-                    'active':partner.active,
+                    'login':partner.login,
                 }
                 res.append(partner_vals)
 

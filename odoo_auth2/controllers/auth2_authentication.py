@@ -7,7 +7,6 @@ import json
 
 
 def authenticate():
-    import pdb; pdb.set_trace()
     """This method is based on auth2 authentication.
 		It will authenticate the users token.
 		params :

@@ -10,14 +10,14 @@
 
     """,
 
-    'author': "Balram",
+    'author': "Wangoes",
     'website': "https://wangoes.com/",
     'category': 'Uncategorized',
     'version': '0.1',
     'images': ['static/description/banner.png'],
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
