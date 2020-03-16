@@ -15,7 +15,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
     'images': ['static/description/banner.png'],
-
+    'license': 'AGPL-3',
     # any module necessary for this one to work correctly
     'depends': ['base'],
 

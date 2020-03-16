@@ -3,26 +3,31 @@
     'name': "Customer POS View",
 
     'summary': """
-        New view to check order history of customer""",
+        New view to create Sale Order from Custom POS view and check order history of customer""",
 
     'description': """
-        New view to check order history of customer with multiple functionality
+        New view to create Sale Order from Custom POS view and check order history of customer with multiple functionality
         like filter product and searching the product and add product to the
         shopping card and can edit or remove after add product to the card.  
     """,
 
-    'author': "Wangoes Technology/Balram",
+    'author': "Wangoes Technology",
     'website': "https://wangoes.com/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Sales',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
     'depends': ['base','product','sale','sale_management', 'sales_team', 'website_sale', 'stock'],
 
+    'images': ['static/description/banner.png'],
+
+    'price': 250,
+    'currency': 'EUR',
+    'license': 'OPL-1',
     # always loaded
     'data': [
         'security/ir.model.access.csv',
