@@ -1,0 +1,203 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFF;
+    width: 630px !important;
+    height:250px;
+    overflow: scroll;
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+}
+
+.colors-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.box {
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.box p {
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin: 0;
+    font-size: 2px;
+}
+
+.macaron:hover{
+	transform: scale(1.1);
+}
+
+.blush:hover{
+	transform: scale(1.1);
+}
+
+
+.nude:hover {
+transform: scale(1.1);
+}
+
+.chocolat:hover {
+transform: scale(1.1);
+}
+
+.cafenoir:hover {
+transform: scale(1.1);
+}
+
+.glass:hover {
+transform: scale(1.1);
+}
+
+.chill:hover {
+transform: scale(1.1);
+}
+
+.coral:hover {
+transform: scale(1.1);
+}
+
+.bondi:hover {
+transform: scale(1.1);
+}
+
+.marina:hover{
+transform: scale(1.1);
+}
+
+.tropical:hover {
+transform: scale(1.1);
+}
+
+.sunset:hover {
+transform: scale(1.1);
+}
+
+.heatwave:hover {
+transform: scale(1.1);
+}
+
+.paradise:hover {
+transform: scale(1.1);
+}
+
+.nightfall:hover {
+transform: scale(1.1);
+}
+
+.ivory:hover {
+transform: scale(1.1);
+}
+
+.azul:hover {
+transform: scale(1.1);
+}
+
+.bolivia:hover {
+transform: scale(1.1);
+}
+
+.jacaranda:hover {
+transform: scale(1.1);
+}
+
+.malbec:hover {
+transform: scale(1.1);
+}
+
+.cream:hover {
+transform: scale(1.1);
+}
+
+.petal:hover {
+transform: scale(1.1);
+}
+
+.burgundy:hover {
+transform: scale(1.1);
+}
+
+.fresh:hover {
+transform: scale(1.1);
+}
+
+.charcoal:hover {
+transform: scale(1.1);
+}
+
+.rosa:hover {
+transform: scale(1.1);
+}
+
+.ruby:hover {
+transform: scale(1.1);
+}
+
+.limestone:hover {
+transform: scale(1.1);
+}
+
+.venice:hover {
+transform: scale(1.1);
+}
+
+.moss:hover {
+transform: scale(1.1);
+}
+
+.chiffon:hover {
+transform: scale(1.1);
+}
+
+.vanilla:hover {
+transform: scale(1.1);
+}
+
+.buttercup:hover {
+transform: scale(1.1);
+}
+
+.rust:hover {
+transform: scale(1.1);
+}
+
+.mahogany:hover {
+transform: scale(1.1);
+}
+
+.cashmere:hover {
+transform: scale(1.1);
+}
+
+.french:hover {
+transform: scale(1.1);
+}
+
+.white:hover {
+transform: scale(1.1);
+}
+
+.denim:hover {
+transform: scale(1.1);
+}
+
+.gunmetal:hover {
+transform: scale(1.1);
+}

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+    <t t-name="ColorTemplate">
+    	<link rel="stylesheet" href="/color_picker_widget/static/src/css/style.css"></link>
+		<button class="btn btn-default color-toggle" style="width: 32px; height: 26px; text-align: center; padding: 0; float: right;">
+			<img style="width: 30px;" src="/color_picker_widget/static/src/img/cols.jpg"/>
+		</button>
+		<div class="container" id='color-container' style="background-color:#EBECED; height: 250px; width: 650px; border-radius: 4px; z-index:999; display : none;"> 
+			<!-- First color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="macaron box" style="background : #FF0000; border-radius : 15px;">
+						<p style="color : #FF0000;">#FF0000</p>
+					</div>
+					<div class="blush box" style="background : #0000FF; border-radius : 15px;">
+						<p style="color : #0000FF;">#0000FF</p>
+					</div>
+					<div class="nude box" style="background : #228B22; border-radius : 15px;">
+						<p style="color : #228B22;">#228B22</p>
+					</div>
+					<div class="chocolat box" style="background : #FFFF00; border-radius : 15px;">
+						<p style="color : #FFFF00;">#FFFF00</p>
+					</div>
+					<div class="cafenoir box" style="background : #000000; border-radius : 15px;">
+						<p style="color : #000000;">#000000</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Second color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="glass box" style="background : #FF4500; border-radius : 15px;">
+						<p style="color : #FF4500;">#FF4500</p>
+					</div>
+					<div class="chill box" style="background : #89CFF0; border-radius : 15px;">
+						<p style="color : #89CFF0;">#89CFF0</p>
+					</div>
+					<div class="coral box" style="background : #4B6F44; border-radius : 15px;">
+						<p style="color : #4B6F44;">#4B6F44</p>
+					</div>
+					<div class="bondi box" style="background : #FFD300; border-radius : 15px;">
+						<p style="color : #FFD300;">#FFD300</p>
+					</div>
+					<div class="marina box" style="background : #696969; border-radius : 15px;">
+						<p style="color : #696969;">#696969</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Third color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="tropical box" style="background : #EE204D; border-radius : 15px;">
+						<p style="color : #EE204D;">#EE204D</p>
+					</div>
+					<div class="sunset box" style="background : #082567; border-radius : 15px;">
+						<p style="color : #082567;">#082567</p>
+					</div>
+					<div class="heatwave box" style="background : #568203; border-radius : 15px;">
+						<p style="color : #568203;">#568203</p>
+					</div>
+					<div class="paradise box" style="background : #FCE883; border-radius : 15px;">
+						<p style="color : #FCE883;">#FCE883</p>
+					</div>
+					<div class="nightfall box" style="background : #555D50; border-radius : 15px;">
+						<p style="color : #555D50;">#555D50</p>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Fourth color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="ivory box" style="background : #FF6166; border-radius : 15px;">
+						<p style="color : #FF6166;">#FF6166</p>
+					</div>
+					<div class="azul box" style="background : #1F75FE; border-radius : 15px;">
+						<p style="color : #1F75FE;">#1F75FE</p>
+					</div>
+					<div class="bolivia box" style="background : #74C365; border-radius : 15px;">
+						<p style="color : #74C365;">#74C365</p>
+					</div>
+					<div class="jacaranda box" style="background : #FAFA37; border-radius : 15px;">
+						<p style="color : #FAFA37;">#FAFA37</p>
+					</div>
+					<div class="malbec box" style="background : #483C32; border-radius : 15px;">
+						<p style="color : #483C32;">#483C32</p>
+					</div>
+				</div>
+			</div>
+	
+	 		<!-- Fifth color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="cream box" style="background : #FF1D24; border-radius : 15px;">
+						<p style="color : #FF1D24;">#FF1D24</p>
+					</div>
+					<div class="petal box" style="background : #0000FF; border-radius : 15px;">
+						<p style="color : #0000FF;">#0000FF</p>
+					</div>
+					<div class="burgundy box" style="background : #00A550; border-radius : 15px;">
+						<p style="color : #00A550;">#00A550</p>
+					</div>
+					<div class="fresh box" style="background : #DAA520; border-radius : 15px;">
+						<p style="color : #DAA520;">#DAA520</p>
+					</div>
+					<div class="charcoal box" style="background : #555555; border-radius : 15px;">
+						<p style="color : #555555;">#555555</p>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Sixth color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="rosa box" style="background : #C41E3A; border-radius : 15px;">
+						<p style="color : #C41E3A;">#C41E3A</p>
+					</div>
+					<div class="ruby box" style="background : #333399; border-radius : 15px;">
+						<p style="color : #333399;">#333399</p>
+					</div>
+					<div class="limestone box" style="background : #50C878; border-radius : 15px;">
+						<p style="color : #50C878;">#50C878</p>
+					</div>
+					<div class="venice box" style="background : #EEEA62; border-radius : 15px;">
+						<p style="color : #EEEA62;">#EEEA62</p>
+					</div>
+					<div class="moss box" style="background : #36454F; border-radius : 15px;">
+						<p style="color : #36454F;">#36454F</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Seventh color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="chiffon box" style="background : #E23D28; border-radius : 15px;">
+						<p style="color : #E23D28;">#E23D28</p>
+					</div>
+					<div class="vanilla box" style="background : #0087BD; border-radius : 15px;">
+						<p style="color : #0087BD;">#0087BD</p>
+					</div>
+					<div class="buttercup box" style="background : #00A86B; border-radius : 15px;">
+						<p style="color : #00A86B;">#00A86B</p>
+					</div>
+					<div class="rust box" style="background : #FFAA1D; border-radius : 15px;">
+						<p style="color : #FFAA1D;">#FFAA1D</p>
+					</div>
+					<div class="mahogany box" style="background : #414A4C; border-radius : 15px;">
+						<p style="color : #414A4C;">#414A4C</p>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Eighth color palette -->
+			<div class="color-palette">
+				<div class="colors-container">
+					<div class="cashmere box" style="background : #7C0A02; border-radius : 15px;">
+						<p style="color : #7C0A02;">#7C0A02</p>
+					</div>
+					<div class="french box" style="background : #0093AF; border-radius : 15px;">
+						<p style="color : #0093AF;">#0093AF</p>
+					</div>
+					<div class="white box" style="background : #0BDA51; border-radius : 15px;">
+						<p style="color : #0BDA51;">#0BDA51</p>
+					</div>
+					<div class="denim box" style="background : #FFB619; border-radius : 15px;">
+						<p style="color : #FFB619;">#FFB619</p>
+					</div>
+					<div class="gunmetal box" style="background : #4B3621; border-radius : 15px;">
+						<p style="color : #4B3621;">#4B3621</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</t>
+</template>
