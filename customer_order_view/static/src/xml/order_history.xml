@@ -1,0 +1,176 @@
+<templates>
+    <t t-name="orderHistoryTemplate">
+        <div class="container-fluid containers">
+            <style>
+                .o_searchview {
+                    display: none !important;
+                }
+                .o_search_options {
+                    display: none !important;
+                }
+                .o_control_panel 
+                {
+                    display: none;
+                }
+                .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4
+                {
+                    padding-left: 0px !important; 
+                    padding-right: 0px !important; 
+                }
+            </style>
+        <input type="hidden" id="currency_symbol"/>
+        <button id="render" style="display: none;">Render</button>
+          <div class="row" style="border-bottom: 1px solid #a0a2a5; border-top: 1px solid #a0a2a5;">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <!-- code for shoping card -->
+                <div class="product_shop" style="border-right: 1px solid #a0a2a5; ">
+                  <div class="add_dynamic_product">
+                    <div id="add_dynamic_product">
+                    </div>
+                    <div class="row amount">
+                        <div class="total pull-right">
+                            <span>Total: </span> <span class="totalAmount">0.00 </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- code for shoping card -->
+                <div style="border-right: 1px solid #a0a2a5; border-bottom: 1px solid #a0a2a5; background: #dfdcdc;border-top: 1px solid green; height: 198px;">
+                    <div class="actionpad">
+                        <button class="button remove_card">
+                            <i class="fa fas fa-trash"></i> Remove card
+                        </button>
+                        <button class="button pay create_quotation">
+                            <div class="pay-circle">
+                                <i class="fa fa-chevron-right"></i>
+                            </div>
+                            Create Quotation
+                        </button>
+                    </div>
+                    <div class="numpad">
+                        <button class="input-button number-char">1</button>
+                        <button class="input-button number-char">2</button>
+                        <button class="input-button number-char">3</button>
+                        <button class="input-button number-char add_qty">+</button>
+                        <br/>
+                        <button class="input-button number-char">4</button>
+                        <button class="input-button number-char">5</button>
+                        <button class="input-button number-char">6</button>
+                        <button class="input-button number-char remove_qty">-</button>
+                        <br/>
+                        <button class="input-button number-char">7</button>
+                        <button class="input-button number-char">8</button>
+                        <button class="input-button number-char">9</button>
+                        <button class="input-button numpad-backspace">
+                            <img height="20" src="/point_of_sale/static/src/img/backspace.png" style="pointer-events: none;" width="21"></img>
+                        </button>
+                        <br/>
+                        <button class="input-button number-char">0</button>
+                        <button class="input-button number-char">.</button>
+                        <button class="removeSingle">X</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="product-list" style="overflow-y: scroll;">
+                        <t t-if="filter_products.length == 0">
+                            <div class="pagination pull-right">
+                                <span class="start_record"><t t-esc="start_limit"/></span><span>-</span>
+                                <span class="end_record"><t t-esc="end_limit"/></span>
+                                <span>/</span><span class="total_record"><t t-esc="length"/></span>
+                                <a href="#" class="previous_page">❮</a>
+                                <a href="#" class="next_page">❯</a>
+                            </div>
+                        </t>
+                        <!-- product filter-->
+                         <t t-if="filter_products != false">
+                            <t t-if="filter_products == 'No data'">
+                                <h5>No Product find to this filter</h5>
+                            </t>
+                            <t t-if="filter_products != 'No data'">
+                                <t t-foreach="filter_products" t-as="filter_list">
+                                <h5><t t-esc="filter_list[0]['filtered_by']"/>
+                                    (<t t-esc="filter_list[0]['length']"/>)
+                                </h5>
+                                <t t-foreach="filter_list" t-as="product">
+                                    <span class="product dynamic_product"  t-att-data-id="product['id']" t-att-data-name="product['name']" t-att-data-list_price="product['list_price']" t-att-data-currency="product['currency_id']" t-att-data-default_code="product['default_code']" t-att-data-barcode="product['barcode']">
+                                        <div class="product-img">
+                                           <t t-if="product['image_medium']">
+                                            <img t-attf-src="data:image/*;base64,{{product['image_medium']}}"/>
+                                            </t>
+
+                                            <t t-else="">
+                                                <img src="https://img.icons8.com/dotty/80/000000/add-camera.png" style="padding: 6px;"/>
+                                            </t>
+                                            <span class="price-tag">
+                                                <t t-esc="product['list_price']" t-options='{"widget": "float", "precision": 2}'/> <t t-esc="product['currency_id']"/> 
+                                            </span>
+                                        </div>
+                                        <div class="product-name">
+                                            <br/><br/>
+                                            <span class="pull-right"><t t-esc="product['name']"/></span><br/>
+                                            <t t-if="product['qty_available'] == 0">
+                                                <i class="fa fas fa-circle" style="color: red;"></i>
+                                            </t>
+                                            <t t-else="">
+                                                <i class="fa fas fa-circle" style="color: green;"></i>
+                                            </t>
+                                            <span class="pull-right order_date"><t t-esc="product['date']"/></span>
+                                        </div>
+                                    </span>
+                                </t>
+                                </t>
+                            </t>
+                        </t>
+                       
+                        <t t-else="">
+                            <t t-if="product_list">
+                                <h5>Products 
+                                    <t t-if="product_list[0]">
+                                        <!-- (<t t-esc="product_list[0]['length']"/>) -->
+                                    </t>
+                                </h5>
+                                <t t-foreach="product_list" t-as="product">
+                                    <span class="product dynamic_product"  t-att-data-id="product['id']" t-att-data-name="product['name']" t-att-data-list_price="product['list_price']" t-att-data-categ_id="product['categ_id']" t-att-data-brand="product['brand']" t-att-data-currency="product['currency_id']" t-att-data-default_code="product['default_code']" t-att-data-barcode="product['barcode']">
+                                        <div class="product-img">
+                                            <t t-if="product['image_medium']">
+                                                <img t-attf-src="data:image/*;base64,{{product['image_medium']}}"/>
+                                            </t>
+
+                                            <t t-else="">
+                                                <img src="https://img.icons8.com/dotty/80/000000/add-camera.png" style="padding: 6px;"/>
+                                            </t>
+                                            <span class="price-tag">
+                                                <t t-esc="product['list_price']" t-options='{"widget": "float", "precision": 2}'/> <t t-esc="product['currency_id']"/> 
+                                            </span>
+                                        </div>
+                                        <div class="product-name">
+                                            <br/><br/>
+                                            <span class="pull-right"><t t-esc="product['name']"/></span><br/>
+                                            <t t-if="product['qty_available'] == 0">
+                                                <i class="fa fas fa-circle" style="color: red;"></i>
+                                            </t>
+                                            <t t-else="">
+                                                <i class="fa fas fa-circle" style="color: green;"></i>
+                                            </t>
+                                            <span class="pull-right order_date"><t t-esc="product['date']"/></span>
+                                        </div>
+                                        
+                                    </span>
+                                </t>
+                            </t>
+                            </t>
+                        <!-- end dynamic product-->
+
+                    </div>
+              </div>
+
+          </div>
+          <script type="text/javascript" src="/customer_order_view/static/src/js/filter.js"></script>
+      </div>  
+    </t>
+</templates>
+
+
+

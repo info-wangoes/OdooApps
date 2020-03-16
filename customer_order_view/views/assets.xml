@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+        	<script type="text/javascript" src="/customer_order_view/static/src/js/order_history.js"></script>
+            <link rel="stylesheet" href="/customer_order_view/static/src/css/order.css"/>
+            <!-- for new filter -->
+            <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"/>
+		  	<link rel="stylesheet" href="/customer_order_view/static/src/css/jquery-octofilter.css"/>
+  			<script src="/customer_order_view/static/src/js/jquery-octofilter.js"></script>
+            <!-- for new filter -->
+        </xpath>
+    </template>
+</odoo>

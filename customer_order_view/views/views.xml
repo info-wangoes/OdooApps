@@ -1,0 +1,64 @@
+<odoo>
+    <record model="ir.ui.view" id="order_history_view_type">
+        <field name="name">Order History</field>
+        <field name="model">order.history.view</field>
+        <field name="arch" type="xml">
+        <order_history_view>
+        </order_history_view>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="order_history_view_action">
+      <field name="name">Order History</field>
+      <field name="res_model">order.history.view</field>
+      <field name="view_mode">order_history_view</field>
+    </record>
+
+    <record model="ir.ui.view" id="product_template_form">
+      <field name="name">Product</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/notebook/page/group/group/field[@name='list_price']" position="before">
+          <field name="is_arrival"/>
+          <field name="product_number"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_order_form">
+      <field name="name">Sale</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_tree"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='state']" position="after">
+          <button type="object" name="check_order_details" class="btn btn-primary" string="Check details" context="{'turn_view_readonly':True}"></button>
+
+        </xpath>
+        
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_order11">
+      <field name="name">Sale</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"></field>
+      <field name="arch" type="xml">
+        <xpath expr='//field[@name="order_line"]//tree/field[@name="product_id"]' position="after">
+          <field name="editor_rys3"/>
+        </xpath>
+      </field>
+    </record>
+   <!--  <record model="ir.ui.view" id="product_template_inherit_view1">
+        <field name="name">Product Template</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+              <xpath expr="//form/sheet/notebook/page/group/group[@name='group_standard_price']/field[@name='list_price']" position="after">
+        <field name="product_number"/>
+        </xpath>
+      </field>
+</record> -->
+
+    <menuitem name="Salesman Order" id="order_history" action="order_history_view_action" groups="sales_team.group_sale_salesman"></menuitem>
+</odoo>

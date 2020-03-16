@@ -1,0 +1,137 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="headerTemplate">
+          <div class="container-fluid headers"> 
+          <div class="row">
+                <div class="col-sm-10">
+                </div>
+              <div class="col-sm-2">
+                  <a href="/web/session/logout?redirect=/web" class="pull-right close_order_view">Logout <i class="fa fa-sign-out"></i></a>
+              </div>
+          </div>
+          <div class="row">
+                <div class="col-sm-5" style="font-size: 16px;">Order History</div>
+                <div class="col-sm-3">
+                    <input list="customer_list" id="customerIds" class="search_style" placeholder="Search customers.." title="Type name"></input>
+                    <span class="fa fa-times close-icon"></span>
+
+                    <datalist id="customer_list">
+                        <t t-foreach="partners" t-as="partner">
+                            <option t-att-data-id="partner['partner_id']" t-att-value="partner['name']">
+                                <span style="color: black;" class="pull-left"><t t-esc="partner['street']"/>
+                                <t t-esc="partner['street2']"/>
+                                <t t-esc="partner['city']"/>
+                                <t t-esc="partner['state_id']"/>
+                                <t t-esc="partner['country_id']"/></span>
+                            </option>
+                        </t>
+                    </datalist>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn-primary customer_orders" style="padding: 6px;margin-top: 12px; width: 100%; font-weight: bold;">Check Order History</button>
+                </div>
+
+                <div class="col-sm-2">
+                    <button class="btn-primary offline_quotation" style="padding: 6px;margin-top: 12px; width: 100%; font-weight: bold;">Save offline quotation</button>
+                </div>
+            </div>
+        
+           <div class="row">
+               <div class="col-sm-4">
+                <div class="btn-primary customerInfo">
+                  <b style="font-size: 16px;">Address : </b> 
+                  <span class="street"/>
+                  <span class="street2"/>
+                  <span class="city"/>
+                  <span class="state_id"/>
+                  <span class="country_id"/><br/>
+                  <b style="font-size: 16px;">Phone : </b><span class="phone"></span>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+              </div>
+              <div class="col-sm-3">
+                  <div style="border-bottom: 1px solid;">
+                      <div class="row">
+                          <div class="col-lg-10 col-sm-10 col-md-12">
+                              <input type="text" id="searchProduct" class="search_style icon_style" placeholder="Search for Product.." title="Type name" style="border-bottom: none;"/>
+                          </div>
+
+                          <div class="col-lg-10 col-sm-2 col-md-0 searching" style="width: 1px; margin-top: 22px;">
+                              <i class="fa fa-search icon_style" aria-hidden="true"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="contains">
+                    <input type="text" id="input" placeholder="Type to search..."/>
+                </div>
+            </div>
+
+              <div class="col-sm-2">
+                  <select style="padding: 7px; margin-top: 10px; width: 100%;" id="filter">
+                      <option value="Select Filter">Group By</option>
+                      <option value="new arrival" style="color: #2bb3e7">Filter by Brand</option>
+                      <option value="new arrival" style="color: #2bb3e7">Filter by category</option>
+                  </select>
+              </div>
+
+            </div>
+        </div> 
+
+        <!-- popup for show warning for customer -->
+        <div class="modal fade" id="customer_popup" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Warning</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please select customer</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="btn btn-primary" class="btn btn-default" data-dismiss="modal" style="background : #37ad7e">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup for show warning to last filter -->
+        <div class="modal fade" id="last_filter" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Warning</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>New filter will applied</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="btn btn-primary" class="btn btn-default" data-dismiss="modal" style="background : #37ad7e">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="add_note" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Note for sales</h4>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="note" name="note"/>
+                        <input type="hidden" id="order_id"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="btn" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="btn btn-primary" class="btn btn-default save_note" data-dismiss="modal" style="background : #37ad7e">Save</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </t>
+</templates>
