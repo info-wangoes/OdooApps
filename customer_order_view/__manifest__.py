@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Customer POS View",
+    'name': "POS View of Sale Order",
 
     'summary': """
         New view to create Sale Order from Custom POS view and check order history of customer""",
