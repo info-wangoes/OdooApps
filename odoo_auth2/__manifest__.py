@@ -10,7 +10,7 @@
 
     """,
 
-    'author': "Wangoes",
+    'author': "Wangoes Technology",
     'website': "https://wangoes.com/",
     'category': 'Uncategorized',
     'version': '0.1',
