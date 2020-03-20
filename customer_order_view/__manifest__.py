@@ -25,7 +25,7 @@
 
     'images': ['static/description/banner.png'],
 
-    'price': 250,
+    'price': 400,
     'currency': 'EUR',
     'license': 'OPL-1',
     # always loaded

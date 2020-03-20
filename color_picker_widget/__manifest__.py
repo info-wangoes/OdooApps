@@ -16,4 +16,6 @@
     'application': True,
     'images': ['static/description/banner.png'],
     'license': 'OPL-1',
+    'price': 5,
+    'currency': 'EUR',
 }
